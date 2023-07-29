@@ -68,7 +68,8 @@ const Navbar = () => {
                                     <li>
                                         <Link
                                             class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                            to="/"
+                                            to="https://drive.google.com/file/d/1R-kjPve-GKeUuoWP6v36UpMDPLX2s35n/view?usp=sharing"
+                                            target='_blank'
                                         >
                                             Resume
                                         </Link>
@@ -171,7 +172,8 @@ const Navbar = () => {
                                 <li>
                                     <Link
                                         class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                        to="/"
+                                        to="https://drive.google.com/file/d/1R-kjPve-GKeUuoWP6v36UpMDPLX2s35n/view?usp=sharing"
+                                        target='_blank'
                                     >
                                         Resume
                                     </Link>
