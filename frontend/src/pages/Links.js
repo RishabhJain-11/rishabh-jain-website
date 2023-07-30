@@ -32,5 +32,4 @@ const Links = () => {
     </>
   )
 }
-// from-green-300 via-blue-500 to-purple-600 
 export default Links

@@ -15,7 +15,7 @@ const Certifications = () => {
           <div class="mx-auto mt-8 max-w-xl">
             <form action="#" class="sm:flex sm:gap-4">
               <div class="sm:flex-1">
-                <label for="email" class="sr-only">Email</label>
+                <label for="email" class="sr-only">SEARCH</label>
 
                 <input
                   type="email"
@@ -53,7 +53,7 @@ const Certifications = () => {
         <div className="flex-1 overflow-y-auto">
           <div className="dark:bg-gray-900 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-10 px-4 py-8">
             <article
-              class="flex bg-white transition hover:shadow-xl dark:bg-gray-900 dark:shadow-gray-800/25 border bg-[#f1f5f9]"
+              class="flex transition hover:shadow-xl dark:bg-gray-900 dark:shadow-gray-800/25 border bg-[#f1f5f9]"
             >
               <div class="rotate-180 p-2 [writing-mode:_vertical-lr]">
                 <time

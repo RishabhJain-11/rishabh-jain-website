@@ -14,7 +14,7 @@ const Articles = () => {
           <div class="mx-auto mt-8 max-w-xl">
             <form action="#" class="sm:flex sm:gap-4">
               <div class="sm:flex-1">
-                <label for="email" class="sr-only">Email</label>
+                <label for="email" class="sr-only">SEARCH</label>
 
                 <input
                   type="email"
@@ -88,7 +88,7 @@ const Articles = () => {
                     praesentium voluptatem omnis atque culpa repellendus.
                   </p>
 
-                  <p class="mt-8 font-bold">READ THE BLOG</p>
+                  <a href="/" class="mt-8 font-bold">READ THE BLOG</a>
                 </div>
               </div>
             </a>

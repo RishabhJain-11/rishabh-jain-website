@@ -14,7 +14,7 @@ const Projects = () => {
           <div class="mx-auto mt-8 max-w-xl">
             <form action="#" class="sm:flex sm:gap-4">
               <div class="sm:flex-1">
-                <label for="email" class="sr-only">Email</label>
+                <label for="email" class="sr-only">SEARCH</label>
 
                 <input
                   type="email"
