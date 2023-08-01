@@ -1,17 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 
 const Projects = () => {
+  const [projects, setProjects] = useState(null);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch("/api/projects"); // Replace "/api/projects" with the actual API endpoint for fetching projects
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+          setProjects([]); // Set projects to an empty array if the response is not in JSON format
+          return;
+        }
+
+        const json = await response.json();
+        setProjects(json);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+        setProjects([]); // Set projects to an empty array on error
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
   return (
     <>
-      <div class="bg-gray-50 dark:bg-gray-900">
-        <div class="p-8 md:p-12 lg:px-16 lg:py-24">
-          <div class="mx-auto max-w-lg text-center">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white md:text-3xl underline underline-offset-4">
+      <div className="bg-gray-50 dark:bg-gray-900">
+        <div className="p-8 md:p-12 lg:px-16 lg:py-24">
+          <div className="mx-auto max-w-lg text-center">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white md:text-3xl underline underline-offset-4">
               ALL OF MY PROJECTS
             </h2>
           </div>
 
-          <div class="mx-auto mt-8 max-w-xl">
+          <div className="mx-auto mt-8 max-w-xl">
             <form action="#" class="sm:flex sm:gap-4">
               <div class="sm:flex-1">
                 <label for="email" class="sr-only">SEARCH</label>
@@ -48,46 +76,54 @@ const Projects = () => {
           </div>
         </div>
       </div>
+
       <div className="flex flex-col bg-gray-900 min-h-screen">
         <div className="flex-1 overflow-y-auto">
           <div className="dark:bg-gray-900 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 px-4 py-8">
-            <article
-              className="hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s] dark:shadow-gray-700/25"
-            >
-              <div class="rounded-[10px] bg-white p-4 !pt-20 dark:bg-gray-900 sm:p-6">
-                <time
-                  datetime="2022-10-10"
-                  class="block text-xs text-gray-500 dark:text-gray-400"
+            {projects &&
+              projects.map((project, index) => (
+                <article
+                  key={index}
+                  className="hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s] dark:shadow-gray-700/25"
                 >
-                  10th Oct 2022
-                </time>
+                  <div className="rounded-[10px] bg-white p-4 !pt-20 dark:bg-gray-900 sm:p-6">
+                    <time
+                      datetime="2022-10-10"
+                      className="block text-xs text-gray-500 dark:text-gray-400"
+                    >
+                      {project.date}
+                    </time>
 
-                <a href="/">
-                  <h3 class="mt-0.5 text-lg font-medium text-gray-900 dark:text-white">
-                    How to center an element using JavaScript and jQuery
-                  </h3>
-                </a>
+                    <a href={project.link}>
+                      <h3 className="mt-0.5 text-lg font-medium text-gray-900 dark:text-white">
+                        {project.title}
+                      </h3>
+                    </a>
 
-                <div class="mt-4 flex flex-wrap gap-1">
-                  <span
-                    class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600 dark:bg-purple-600 dark:text-purple-100"
-                  >
-                    Snippet
-                  </span>
-
-                  <span
-                    class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600 dark:bg-purple-600 dark:text-purple-100"
-                  >
-                    JavaScript
-                  </span>
-                </div>
-              </div>
-            </article>
+                    <div className="mt-4 flex flex-wrap gap-1">
+                      {/* Add tags or other relevant information for the project */}
+                      <span
+                        className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600 dark:bg-purple-600 dark:text-purple-100"
+                      >
+                        {project.tags}
+                      </span>
+                      <div>
+                        <a href={project.glink} target='_blank' rel='noreferrer' className="underline underline-offset-8 offset-8 mt-8 ml-10 mr-10 text-white  font-bold">
+                          Github Code Link
+                        </a>
+                        <a href={project.llink} target='_blank' rel='noreferrer' className="underline underline-offset-8 mt-8 mr-10 font-bold  text-white">
+                          Live Website Link
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              ))}
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

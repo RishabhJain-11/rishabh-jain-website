@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const cors = require('cors'); // Import cors middleware
 const port = process.env.PORT;
 
 const projectRoutes = require('./routes/projects');
@@ -10,6 +11,8 @@ const articleRoutes = require('./routes/articles');
 const linkRoutes = require('./routes/links');
 
 app.use(express.json());
+
+app.use(cors()); // Apply cors middleware
 
 app.use((req, res, next) => {
     console.log(req.path, req.method);
@@ -20,7 +23,6 @@ app.use('/api/projects', projectRoutes);
 app.use('/api/certifications', certificationRoutes);
 app.use('/api/articles', articleRoutes);
 app.use('/api/links', linkRoutes);
-
 
 mongoose.connect("mongodb://0.0.0.0:27017/portfolio")
     .then(() => {
