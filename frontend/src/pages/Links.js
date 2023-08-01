@@ -14,7 +14,7 @@ const Links = () => {
 
         const contentType = response.headers.get('content-type');
         if (!contentType || !contentType.includes('application/json')) {
-          setLinks([]); // Set links to an empty array if the response is not in JSON format
+          setLinks([]); 
           return;
         }
 
@@ -22,7 +22,7 @@ const Links = () => {
         setLinks(json);
       } catch (error) {
         console.error("Error fetching resources:", error);
-        setLinks([]); // Set links to an empty array on error
+        setLinks([]); 
       }
     };
 

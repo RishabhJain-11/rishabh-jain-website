@@ -12,22 +12,19 @@ const About = () => {
             class="mx-auto max-w-xl text-center ltr:sm:text-left rtl:sm:text-right"
           >
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white md:text-3xl">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit
+              Software Developer, Machine Learning & Artificial Intelligence practitioner.
             </h2>
 
             <p class="hidden text-gray-500 dark:text-gray-400 md:mt-4 md:block">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas
-              tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et
-              fermentum, augue. Aliquet amet volutpat quisque ut interdum tincidunt
-              duis.
+              🌟 Welcome to the extraordinary world of technology where innovation knows no bounds! I am a seasoned software practitioner with a major in Information Technology, specializing in Frontend Development, Backend Development, and the captivating realms of Machine Learning and Artificial Intelligence. My passion for constant improvement drives me to excel in hackathons and contribute to open-source projects, constantly pushing the boundaries of what's possible. With an insatiable thirst for success, I orchestrate symphonies of code, crafting seamless user experiences on the frontend and engineering robust backend systems. Step into the future with me as I unravel the mysteries of AI and Machine Learning, always striving to reach higher peaks of achievement. Join my captivating journey of relentless ambition and cutting-edge technology! 🔥🚀
             </p>
 
             <div class="mt-4 md:mt-8">
               <a
-                href="/"
+                href="/links"
                 class="inline-block rounded bg-emerald-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-emerald-700 focus:outline-none focus:ring focus:ring-yellow-400"
               >
-                Get Started Today
+                Coding Links
               </a>
             </div>
           </div>
@@ -47,7 +44,7 @@ const About = () => {
         >
           <summary class="flex cursor-pointer items-center justify-between gap-1.5">
             <h2 class="text-lg font-medium text-gray-900 dark:text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing?
+              Tell me about your education details.
             </h2>
 
             <span
@@ -69,10 +66,7 @@ const About = () => {
           </summary>
 
           <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-200">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
-            molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
-            voluptate dicta quo officiis explicabo consequuntur distinctio corporis
-            earum similique!
+            I have completed my under graduation in DYPCOE, Akurdi which affiliated to Pune University, in which I have majored in Information Technology.
           </p>
         </details>
 
@@ -81,7 +75,7 @@ const About = () => {
         >
           <summary class="flex cursor-pointer items-center justify-between gap-1.5">
             <h2 class="text-lg font-medium text-gray-900 dark:text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing?
+              Describe a time when you had to learn a new programming language or technology quickly. How did you approach the learning process, and what was the outcome?
             </h2>
 
             <span
@@ -103,10 +97,7 @@ const About = () => {
           </summary>
 
           <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-200">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
-            molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
-            voluptate dicta quo officiis explicabo consequuntur distinctio corporis
-            earum similique!
+            I have learnt multiple skills quite quickly using online sources and with the invent of AI tools, it made my learning as fast as I can, as I can search the most insight full prompts quickly.
           </p>
         </details>
         <details
@@ -114,7 +105,7 @@ const About = () => {
         >
           <summary class="flex cursor-pointer items-center justify-between gap-1.5">
             <h2 class="text-lg font-medium text-gray-900 dark:text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing?
+              How do you stay updated on the latest trends and technologies in software development?
             </h2>
 
             <span
@@ -136,10 +127,7 @@ const About = () => {
           </summary>
 
           <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-200">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
-            molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
-            voluptate dicta quo officiis explicabo consequuntur distinctio corporis
-            earum similique!
+            I usually stay updated via blogs on various tech blog platforms such as Dev.to, Medium, Hashnode etc, and also via Twitter feed which helps me to get info about new things in tech.
           </p>
         </details>
         <details
@@ -147,7 +135,7 @@ const About = () => {
         >
           <summary class="flex cursor-pointer items-center justify-between gap-1.5">
             <h2 class="text-lg font-medium text-gray-900 dark:text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing?
+              How do you handle constructive criticism and feedback on your code?
             </h2>
 
             <span
@@ -169,10 +157,7 @@ const About = () => {
           </summary>
 
           <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-200">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
-            molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
-            voluptate dicta quo officiis explicabo consequuntur distinctio corporis
-            earum similique!
+            I try to take note of every constructive criticism and advice as it helps me to solve issues related to my code development and also taking the notes of each makes me remember the advice for a longer period time.
           </p>
         </details>
         <details
@@ -180,7 +165,7 @@ const About = () => {
         >
           <summary class="flex cursor-pointer items-center justify-between gap-1.5">
             <h2 class="text-lg font-medium text-gray-900 dark:text-white">
-              Lorem ipsum dolor sit amet consectetur adipisicing?
+              What do you consider your greatest achievement as a software developer?
             </h2>
 
             <span
@@ -202,10 +187,7 @@ const About = () => {
           </summary>
 
           <p class="mt-4 leading-relaxed text-gray-700 dark:text-gray-200">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
-            molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
-            voluptate dicta quo officiis explicabo consequuntur distinctio corporis
-            earum similique!
+            Making real world projects and deploying or working as Open Source contributor helps me understand problems that people are facing and working on that. Hackathons also help me to work on industry level project, these all can be considered as my achievements.
           </p>
         </details>
       </div>

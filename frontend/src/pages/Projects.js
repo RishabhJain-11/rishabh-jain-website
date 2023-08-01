@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 const Projects = () => {
   const [projects, setProjects] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredProjects, setFilteredProjects] = useState(null);
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch("/api/projects"); // Replace "/api/projects" with the actual API endpoint for fetching projects
+        const response = await fetch("/api/projects");
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -14,7 +16,7 @@ const Projects = () => {
 
         const contentType = response.headers.get('content-type');
         if (!contentType || !contentType.includes('application/json')) {
-          setProjects([]); // Set projects to an empty array if the response is not in JSON format
+          setProjects([]);
           return;
         }
 
@@ -22,12 +24,29 @@ const Projects = () => {
         setProjects(json);
       } catch (error) {
         console.error("Error fetching projects:", error);
-        setProjects([]); // Set projects to an empty array on error
+        setProjects([]);
       }
     };
 
     fetchProjects();
   }, []);
+
+  useEffect(() => {
+    if (!projects) return;
+
+    // Filter projects based on searchQuery
+    const filtered = projects.filter((project) => {
+      const { title } = project;
+      const searchRegex = new RegExp(searchQuery, 'i');
+      return searchRegex.test(title)
+    });
+
+    setFilteredProjects(filtered);
+  }, [searchQuery, projects]);
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
   return (
     <>
@@ -38,27 +57,33 @@ const Projects = () => {
               ALL OF MY PROJECTS
             </h2>
           </div>
-
           <div className="mx-auto mt-8 max-w-xl">
-            <form action="#" class="sm:flex sm:gap-4">
-              <div class="sm:flex-1">
-                <label for="email" class="sr-only">SEARCH</label>
-
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="sm:flex sm:gap-4"
+            >
+              <div className="sm:flex-1">
+                <label htmlFor="search" className="sr-only">
+                  SEARCH
+                </label>
                 <input
-                  type="email"
+                  type="text"
+                  id="search"
                   placeholder="SEARCH HERE FOR PROJECTS"
-                  class="w-full rounded-md border-gray-200 bg-white p-3 shadow-sm transition focus:border-white focus:outline-none focus:ring focus:ring-yellow-400 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  className="w-full rounded-md border-gray-200 bg-white p-3 shadow-sm transition focus:border-white focus:outline-none focus:ring focus:ring-yellow-400 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
                 />
               </div>
 
               <button
                 type="submit"
-                class="group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-rose-600 px-5 py-3 text-white transition focus:outline-none focus:ring focus:ring-yellow-400 sm:mt-0 sm:w-auto"
+                className="group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-rose-600 px-5 py-3 text-white transition focus:outline-none focus:ring focus:ring-yellow-400 sm:mt-0 sm:w-auto"
               >
-                <span class="text-sm font-medium"> SEARCH </span>
+                <span className="text-sm font-medium"> SEARCH </span>
 
                 <svg
-                  class="h-5 w-5 rtl:rotate-180"
+                  className="h-5 w-5 rtl:rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -80,8 +105,8 @@ const Projects = () => {
       <div className="flex flex-col bg-gray-900 min-h-screen">
         <div className="flex-1 overflow-y-auto">
           <div className="dark:bg-gray-900 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 px-4 py-8">
-            {projects &&
-              projects.map((project, index) => (
+            {filteredProjects &&
+              filteredProjects.map((project, index) => (
                 <article
                   key={index}
                   className="hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s] dark:shadow-gray-700/25"
@@ -101,7 +126,6 @@ const Projects = () => {
                     </a>
 
                     <div className="mt-4 flex flex-wrap gap-1">
-                      {/* Add tags or other relevant information for the project */}
                       <span
                         className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600 dark:bg-purple-600 dark:text-purple-100"
                       >
@@ -112,7 +136,7 @@ const Projects = () => {
                           Github Code Link
                         </a>
                         <a href={project.llink} target='_blank' rel='noreferrer' className="underline underline-offset-8 mt-8 mr-10 font-bold  text-white">
-                          Live Website Link
+                          Website Link
                         </a>
                       </div>
                     </div>
