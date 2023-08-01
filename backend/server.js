@@ -4,10 +4,10 @@ const app = express();
 const mongoose = require('mongoose');
 const port = process.env.PORT;
 
-const projectRoutes = require();
-const certificationRoutes = require();
-const articleRoutes = require();
-const linkRoutes = require();
+const projectRoutes = require('./routes/projects');
+const certificationRoutes = require('./routes/certifications');
+const articleRoutes = require('./routes/articles');
+const linkRoutes = require('./routes/links');
 
 app.use(express.json());
 

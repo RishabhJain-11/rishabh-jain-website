@@ -32,7 +32,7 @@ const Navbar = () => {
                                     <li>
                                         <Link
                                             class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                            to="/projects"
+                                            to="projects"
                                         >
                                             Projects
                                         </Link>
@@ -50,7 +50,7 @@ const Navbar = () => {
                                     <li>
                                         <Link
                                             class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                            to="/articles"
+                                            to="articles"
                                         >
                                             Articles
                                         </Link>
@@ -59,7 +59,7 @@ const Navbar = () => {
                                     <li>
                                         <Link
                                             class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                            to="/about"
+                                            to="about"
                                         >
                                             About
                                         </Link>
@@ -85,7 +85,6 @@ const Navbar = () => {
                                     </li>
                                 </ul>
                             </nav>
-
                             <div className="flex items-center gap-4">
                                 <div className="sm:flex sm:gap-4">
                                     <a
@@ -127,7 +126,7 @@ const Navbar = () => {
                                     </button>
                                 </div>
 
-                            </div>
+                            </div> 
                         </div>
                     </div>
                     {menuOpen && (
@@ -136,7 +135,7 @@ const Navbar = () => {
                                 <li>
                                     <Link
                                         class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                        to="/projects"
+                                        to="projects"
                                     >
                                         Projects
                                     </Link>
@@ -145,7 +144,7 @@ const Navbar = () => {
                                 <li>
                                     <Link
                                         class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                        to="/certifications"
+                                        to="certifications"
                                     >
                                         Certifications
                                     </Link>
@@ -154,7 +153,7 @@ const Navbar = () => {
                                 <li>
                                     <Link
                                         class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                        to="/articles"
+                                        to="articles"
                                     >
                                         Articles
                                     </Link>
@@ -163,7 +162,7 @@ const Navbar = () => {
                                 <li>
                                     <Link
                                         class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                        to="/about"
+                                        to="about"
                                     >
                                         About
                                     </Link>
@@ -182,7 +181,7 @@ const Navbar = () => {
                                 <li>
                                     <Link
                                         class="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                        to="/links"
+                                        to="links"
                                     >
                                         Links
                                     </Link>

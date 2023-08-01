@@ -78,7 +78,7 @@ const Certifications = () => {
                 <div
                   class="border-s border-gray-900/10 p-4 dark:border-white/10 sm:!border-l-transparent sm:p-6"
                 >
-                  <a href="#">
+                  <a href="/">
                     <h3 class="font-bold uppercase text-gray-900 dark:text-white">
                       Finding the right guitar for your style - 5 tips
                     </h3>

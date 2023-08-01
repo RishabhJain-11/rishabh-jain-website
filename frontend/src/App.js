@@ -22,7 +22,6 @@ export default function App() {
           <Route path="/links" element={<Links />} />
           <Route path="/projects" element={<Projects />} />
         </Routes>
-        {/* <Route path="/" element={<Footer />} /> */}
       </BrowserRouter>
       <Footer />
     </>
