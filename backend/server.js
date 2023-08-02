@@ -1,10 +1,11 @@
-require("dotenv").config();
+const dotenv = require('dotenv');
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
-const port = process.env.PORT || 3000; // Default to port 3000 if PORT environment variable is not set in .env
+const port = process.env.PORT || 4000; // Default to port 4000 if PORT environment variable is not set in .env
 
+dotenv.config()
 const projectRoutes = require('./routes/projects');
 const certificationRoutes = require('./routes/certifications');
 const articleRoutes = require('./routes/articles');
@@ -24,7 +25,11 @@ app.use('/api/certifications', certificationRoutes);
 app.use('/api/articles', articleRoutes);
 app.use('/api/links', linkRoutes);
 
-mongoose.connect("mongodb://PORT:27017/portfolio")
+const uri = process.env.MONGODB_URI
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
     .then(() => {
         app.listen(port, () => {
             console.log(`Connected to port ${port}`)
@@ -33,3 +38,6 @@ mongoose.connect("mongodb://PORT:27017/portfolio")
     .catch((e) => {
         console.log(e.message);
     })
+
+
+    // mongodb+srv://codebeing11:0wRl6WivUBaPakEV@portfolio.zcyszsl.mongodb.net/?retryWrites=true&w=majority
