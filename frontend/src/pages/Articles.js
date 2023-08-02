@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_URL } from '../constants/config';
 
 const Articles = () => {
   const [articles, setArticles] = useState(null);
@@ -8,7 +9,7 @@ const Articles = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch("/api/articles");
+        const response = await fetch(`${API_URL}/articles`);
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);

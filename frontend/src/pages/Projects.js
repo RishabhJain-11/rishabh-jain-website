@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_URL } from '../constants/config';
 
 const Projects = () => {
   const [projects, setProjects] = useState(null);
@@ -8,7 +9,7 @@ const Projects = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch("/api/projects");
+        const response = await fetch(`${API_URL}/projects`);
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);

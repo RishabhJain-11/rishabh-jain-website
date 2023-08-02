@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState, useEffect } from 'react';
+import { API_URL } from '../constants/config';
 
 const Certifications = () => {
   const [certifications, setCertifications] = useState(null);
@@ -9,8 +10,7 @@ const Certifications = () => {
   useEffect(() => {
     const fetchCertifications = async () => {
       try {
-        const response = await fetch("/api/certifications");
-
+        const response = await fetch(`${API_URL}/certifications`);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
