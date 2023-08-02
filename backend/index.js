@@ -24,7 +24,7 @@ app.use('/api/certifications', certificationRoutes);
 app.use('/api/articles', articleRoutes);
 app.use('/api/links', linkRoutes);
 
-mongoose.connect("mongodb://localhost:27017/portfolio")
+mongoose.connect("mongodb://PORT:27017/portfolio")
     .then(() => {
         app.listen(port, () => {
             console.log(`Connected to port ${port}`)
