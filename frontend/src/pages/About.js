@@ -1,5 +1,6 @@
 import React from 'react'
 import img from '../images/IMG2.jpg'
+import { API_URL } from '../constants/config';
 
 const About = () => {
   return (
@@ -21,7 +22,7 @@ const About = () => {
 
             <div class="mt-4 md:mt-8">
               <a
-                href="/links"
+                href={`${API_URL}/links`}
                 class="inline-block rounded bg-emerald-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-emerald-700 focus:outline-none focus:ring focus:ring-yellow-400"
               >
                 Coding Links
