@@ -1,6 +1,5 @@
 import React from 'react'
 import img from '../images/IMG2.jpg'
-import { API_URL } from '../constants/config';
 
 const About = () => {
   return (
