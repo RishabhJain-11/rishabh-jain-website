@@ -8,6 +8,7 @@ import Articles from "./pages/Articles";
 import Certifications from "./pages/Certifications";
 import Links from "./pages/Links";
 import Projects from "./pages/Projects";
+import NotFound from "./pages/NotFound"; // Import your custom 404 page component
 
 export default function App() {
   return (
@@ -21,6 +22,9 @@ export default function App() {
           <Route path="/certifications" element={<Certifications />} />
           <Route path="/links" element={<Links />} />
           <Route path="/projects" element={<Projects />} />
+
+          {/* The catch-all route for 404 */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
       <Footer />
