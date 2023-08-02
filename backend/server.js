@@ -39,5 +39,3 @@ mongoose.connect(uri, {
         console.log(e.message);
     })
 
-
-    // mongodb+srv://codebeing11:0wRl6WivUBaPakEV@portfolio.zcyszsl.mongodb.net/?retryWrites=true&w=majority
