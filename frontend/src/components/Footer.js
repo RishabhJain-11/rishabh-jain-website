@@ -234,7 +234,6 @@ const Footer = () => {
                                     </Link>
                                 </li>
                             </ul>
-                            const not = new Date();
                             <p class="mt-8 text-xs text-gray-500 dark:text-gray-400 sm:mt-0">
                                 &copy; 2023. The Rishabh Jain Company. All rights reserved.
                             </p>
@@ -247,3 +246,4 @@ const Footer = () => {
 }
 
 export default Footer
+

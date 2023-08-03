@@ -26,8 +26,8 @@ export default function App() {
           {/* The catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </>
   )
 }
