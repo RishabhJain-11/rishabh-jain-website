@@ -133,10 +133,10 @@ const Projects = () => {
                         {project.tags}
                       </span>
                       <div>
-                        <a href={project.glink} target='_blank' rel='noreferrer' className="underline underline-offset-8 offset-8 mt-8 ml-10 mr-10 text-white  font-bold">
-                          Github Code Link
+                        <a href={project.glink} target='_blank' rel='noreferrer' className="underline underline-offset-8 offset-8 mt-8 ml-10 mr-10 text-black dark:text-gray-200  font-bold">
+                          Github Link
                         </a>
-                        <a href={project.llink} target='_blank' rel='noreferrer' className="underline underline-offset-8 mt-8 mr-10 font-bold  text-white">
+                        <a href={project.llink} target='_blank' rel='noreferrer' className="underline underline-offset-8 mt-8 mr-10 font-bold  text-black dark:text-gray-200">
                           Website Link
                         </a>
                       </div>
