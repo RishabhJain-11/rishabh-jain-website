@@ -1,9 +1,8 @@
 import React from 'react'
 import img from '../images/img1.jpg'
+import { Link } from 'react-router-dom'
 
-// const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
 const Footer = () => {
-
     return (
         <>
             <footer class="bg-white dark:bg-gray-900 lg:grid lg:grid-cols-5">
@@ -34,6 +33,7 @@ const Footer = () => {
 
                             <ul class="mt-8 space-y-1 text-sm text-gray-700 dark:text-gray-200">
                                 <li>"Code your dreams into reality; with each line, you shape the future."</li>
+                                <hr />
                                 <li>Why do programmers prefer dark mode?
                                     Because light attracts bugs!</li>
                             </ul>
@@ -130,39 +130,39 @@ const Footer = () => {
                                     </li>
 
                                     <li>
-                                        <a
-                                            href="/projects"
+                                        <Link
+                                            to="/projects"
                                             class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
                                         >
                                             Projects
-                                        </a>
+                                        </Link>
                                     </li>
 
                                     <li>
-                                        <a
-                                            href="/links"
+                                        <Link
+                                            to="/links"
                                             class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
                                         >
                                             Coding Profiles
-                                        </a>
+                                        </Link>
                                     </li>
 
                                     <li>
-                                        <a
-                                            href="/articles"
+                                        <Link
+                                            to="/articles"
                                             class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
                                         >
                                             Articles
-                                        </a>
+                                        </Link>
                                     </li>
 
                                     <li>
-                                        <a
-                                            href="/certifications"
+                                        <Link
+                                            to="/certifications"
                                             class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
                                         >
                                             Certifications
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
@@ -172,21 +172,21 @@ const Footer = () => {
 
                                 <ul class="mt-6 space-y-4 text-sm">
                                     <li>
-                                        <a
-                                            href="/about"
+                                        <Link
+                                            to="/about"
                                             class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
                                         >
                                             About Me
-                                        </a>
+                                        </Link>
                                     </li>
 
                                     <li>
-                                        <a
-                                            href="/links"
+                                        <Link
+                                            to="/links"
                                             class="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
                                         >
                                             Contact Me
-                                        </a>
+                                        </Link>
                                     </li>
 
                                     <li>
@@ -208,30 +208,30 @@ const Footer = () => {
                         <div class="sm:flex sm:items-center sm:justify-between">
                             <ul class="flex flex-wrap gap-4 text-xs">
                                 <li>
-                                    <a
-                                        href="/"
+                                    <Link
+                                        to="/"
                                         class="text-gray-500 transition hover:opacity-75 dark:text-gray-400"
                                     >
                                         Terms & Conditions
-                                    </a>
+                                    </Link>
                                 </li>
 
                                 <li>
-                                    <a
-                                        href="/"
+                                    <Link
+                                        to="/"
                                         class="text-gray-500 transition hover:opacity-75 dark:text-gray-400"
                                     >
                                         Privacy Policy
-                                    </a>
+                                    </Link>
                                 </li>
 
                                 <li>
-                                    <a
-                                        href="/"
+                                    <Link
+                                        to="/"
                                         class="text-gray-500 transition hover:opacity-75 dark:text-gray-400"
                                     >
                                         Cookies
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                             const not = new Date();
